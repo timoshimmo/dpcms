@@ -1,0 +1,36 @@
+
+@media( max-width: 1115px){
+	.sidebar-navigation-list{ padding: 5px 5px 5px 20px;}
+	.navigation-list-active, .spacing{ padding: 15px 5px 15px 20px;}
+	.sidebar-navigation-list span{ font-size: 0.8rem; }
+	.grid-lists{gap: 45px 8%;}
+	.grid-col-4{ flex-basis: 46%;}
+	.grid-col-4 h2{ font-size: 1.2rem; }
+	.header-tab-lists{ font-size: 0.9rem; }
+}
+
+
+@media( max-width: 992px){
+	.sidebar{ left: -100%; transition: left 0.5s ease; z-index: 9; width: 100%; z-index: 9; overflow-y: auto;}
+	.sidebar-show{ left: 0%; }
+	.main-container{ width: 100%; left: 0;}
+	.main-content-body{ padding: 80px 20px 100px; }
+	.header{ width: 100%; padding: 0 20px; }
+	.d-mobile{ display: inline-block; }
+	.d-flex-mobile{ display: flex; }
+	.d-flex-destop,.d-block-desktop{ display: none; }
+	.header-right{ gap:30px; }
+	.mobile-logo{ width: 180px; }
+	.sidebar-navigation-list span{ font-size: 1rem; }
+	.grid-lists{ flex-direction: column; }
+	.sidebar-top{ justify-content: space-between!important; padding: 20px;  align-items: center;}
+	.text-white-mobile{ color: var(--white); }
+	.select-icon{right: 3px;}
+	.grid-lists-6{flex-basis: 100%; align-items: center;}
+	.investment-details-wrapper{padding: 100px 0px;}
+	.investment-plan-wrapper{ flex-direction: column; }
+	.space-mobile{padding: 0 10px;}
+	.mobile-tabs{ flex-wrap: wrap; gap:15px; }
+	.mobile-tabs span{white-space: nowrap; padding: 12px; border: 1px solid var(--main); border-radius: 50px; transition: 0.5s ease;}
+	.mobile-tabs span.active{background: var(--main); color: var(--white);}
+}

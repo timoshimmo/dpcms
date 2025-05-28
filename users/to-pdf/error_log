@@ -1,0 +1,6 @@
+[17-May-2025 19:25:00 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_account_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 12
+[17-May-2025 19:25:00 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 13
+[17-May-2025 19:25:01 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_account_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 12
+[17-May-2025 19:25:01 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 13
+[17-May-2025 19:25:01 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_account_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 12
+[17-May-2025 19:25:01 Africa/Lagos] PHP Warning:  Undefined array key "session_logged_in_user_id" in /home/destfpki/public_html/users/to-pdf/generate-virtual-transaction-pdf.php on line 13

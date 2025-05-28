@@ -1,0 +1,33 @@
+#RewriteEngine On 
+#RewriteCond %{HTTPS} off 
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+Options -Indexes
+
+#Alternate default index page
+DirectoryIndex home.php
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.html -f 
+RewriteRule ^(.*)$ $1.html
+
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.htm -f 
+RewriteRule ^(.*)$ $1.htm
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.htm -f 
+RewriteRule ^(.*)$ $1.pdf
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.htm -f 
+RewriteRule ^(.*)$ $1.js
+
+

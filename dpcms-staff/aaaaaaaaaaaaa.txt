@@ -1,0 +1,13 @@
+DATABASE TABLE FOR NEW ADMIN SO FAR
+admin_login
+admin_name_update_log
+admin_delete_bank_details
+
+
+
+DB FILE TO UPDATE
+query_user_next_of_kin_details();       
+
+
+ON wallet transactions details table. ADD this SQL
+ALTER TABLE `wallet_transaction_details` ADD `wallet_funded_by` INT(255) NULL DEFAULT NULL AFTER `wallet_txn_status`;

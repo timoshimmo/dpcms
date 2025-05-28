@@ -1,0 +1,104 @@
+require_once('/var/www/hlwcab.com/public_html/cab/service/sms/smsAPIService.php');
+class PDF extends FPDF{
+    // Page header
+    function Header(){
+        // Logo
+        $this->Image('../../../admin/img/HLW-CabManagementLogopdf.png',10,-1,30);
+        $this->SetFont('Arial','B',13);
+        // Move to the right
+        $this->Cell(80);
+        // Title
+        $this->Cell(80,10,'Report List',1,0,'C');
+        // Line break
+        $this->Ln(20);
+    }
+    // Page footer
+    function Footer(){
+        // Position at 1.5 cm from bottom
+        $this->SetY(-15);
+        // Arial italic 8
+        $this->SetFont('Arial','I',8);
+        // Page number
+        $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    }
+
+}
+if ($_REQUEST["action"]=="downloadMonthlyReportData") {
+        $data=array();
+        $start_time=$_POST['start_time'];
+        $end_time=$_POST['end_time'];
+        $sql="select * from cb_wallet_driver_logs order by id desc";
+        $stmt = $db->prepare($sql);
+        if ($stmt->execute()) {
+            $row = $stmt->fetchAll();
+            $number_of_rows= count($row);
+            if ($number_of_rows > 0) {
+                $slno=1;
+                foreach ($row as $key => $value) {
+                    $last_update=$value['last_update'];
+                    $owner_id=$value['owner_id'];
+                    $sql="select * from cb_owner_info where owner_id=:owner_id";
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':owner_id', htmlspecialchars(strip_tags($owner_id)));
+                    if ($stmt->execute()) {
+                        $orow = $stmt->fetchAll();
+                        $number_of_orows= count($orow);
+                        if ($number_of_orows > 0) {
+                            foreach ($orow as $key => $val) {
+                                $owner_name=$val['name'];
+                            }
+                        }
+                    }
+                    $dt = new DateTime($last_update);
+                    $odate=$dt->format('d-m-Y');
+                    $ndate=date('d-m-Y',strtotime($odate));
+                    $stdate=date('d-m-Y',strtotime($start_time));
+                    $endate=date('d-m-Y',strtotime($end_time));
+                    if ($ndate >= $stdate && $ndate <= $endate) {
+                        $data[]=array("sl_no"=>$slno,"owner_name"=>$owner_name,"last_update"=>$last_update,"book_id"=>$value['book_id'],"operator_total"=>$value['operator_total'],"ride_total"=>$value['ride_total']);
+                        $slno++;
+                    }
+                }
+            }
+        }
+        $result1=array();
+        if (count($data) > 0) {
+            $pdf = new PDF();
+            //$pdf = new FPDF(); 
+            //header
+            $pdf->AddPage();
+            $width_cell=array(10,30,40,40,30,30);
+            $pdf->SetFont('Arial','B',12);
+            $pdf->SetFillColor(193,229,252);
+            $pdf->Cell($width_cell[0],10,'Sl No',1,0,C,true);
+            $pdf->Cell($width_cell[1],10,'Owner Name',1,0,C,true);
+            $pdf->Cell($width_cell[2],10,'Date',1,0,C,true);
+            $pdf->Cell($width_cell[3],10,'Booking ID',1,0,C,true);
+            $pdf->Cell($width_cell[4],10,'Operator',1,1,C,true);
+            $pdf->Cell($width_cell[5],10,'Ride',1,1,C,true);
+            $pdf->SetFont('Arial','',10);
+            //Background color of header//
+            $pdf->SetFillColor(235,236,236); 
+            //to give alternate background fill color to rows// 
+            $fill=false;
+            foreach ($data as $row) {
+                $pdf->Cell($width_cell[0],10,$row['sl_no'],1,0,C,$fill);
+                $pdf->Cell($width_cell[1],10,$row['owner_name'],1,0,L,$fill);
+                $pdf->Cell($width_cell[2],10,$row['last_update'],1,0,C,$fill);
+                $pdf->Cell($width_cell[3],10,$row['book_id'],1,0,C,$fill);
+                $pdf->Cell($width_cell[4],10,$row['operator_total'],1,1,C,$fill);
+                $pdf->Cell($width_cell[5],10,$row['ride_total'],1,1,C,$fill);
+                $fill = !$fill;
+            }
+            $today = date('YmdHi');
+            $filename='report_'.$today.'.pdf';
+            $totalpath='/var/www/hlwcab.com/public_html/cab/service/admin/report/download/'.$filename;
+            $pdf->Output($totalpath, "F");
+            $result1["msg"] = "Succesfully Downloaded...";
+        }else{
+            header("HTTP/1.0 401 Unauthorized");
+            $result1["msg"] = "No record to download...";
+        }
+        //print_r($result1);exit;
+        echo json_encode($result1);
+    }
