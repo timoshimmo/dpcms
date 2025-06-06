@@ -79,8 +79,8 @@ else{
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>Change Phone Number Password | Destiny Promoters Cooperative</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/media.css">
-	<link rel="stylesheet" type="text/css" href="assets/icons/remixicon/remixicon.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/media.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/icons/remixicon/remixicon.css"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="icon" href="https://i.ibb.co/2NJ7pCS/dpcms-logo.png" type="image/png">
 	<link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/2NJ7pCS/dpcms-logo.png" />
