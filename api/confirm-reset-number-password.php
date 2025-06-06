@@ -91,9 +91,7 @@ else{
 <body class="mainbg">
 
 	<div class="form-container">
-		
-		<a href="home"><img src="https://i.ibb.co/2NJ7pCS/dpcms-logo.png" class="mx-auto" style="max-width:100px;"></a>
-				
+						
 		<div class="form-desc">
 			<h1 class="top-title">Change Password</h1>
 			<p class="text-blur-md">Enter the OTP sent to the phone number ('.<?php echo $masked_phone_number; ?>.')</p>
