@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-			<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+			<!-- <section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
@@ -57,7 +57,7 @@ include 'header.php';
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 <?php
 include 'footer.php';
 ?>
