@@ -48,8 +48,8 @@ include 'header.php';
 				<div class="container">
 					<h2 class="section_header color4"> AIMS & OBJECTIVES  </h2>
 							
-<p class="to_animate" data-animation="fadeInUp" data-delay="600">
-<ol class="to_animate" data-animation="fadeInUp" data-delay="600">
+<!-- <p class="to_animate" data-animation="fadeInUp" data-delay="600">
+<ol class="to_animate" data-animation="fadeInUp" data-delay="600">  -->
 <li>By relying on biblical principles of love, generosity, stewardship and community, we strive to create a meaningful and impactful platform where individuals take control of their livelihood through an empowered collaborative micro-contributions.</li>
 
 <li>To empower individuals and communities to take control of their lives and destinies by equipping them to be self-sufficient and independent. We believe that every individual deserves a life with dignity and respect.</li>
