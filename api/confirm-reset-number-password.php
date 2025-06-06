@@ -93,18 +93,12 @@ else{
 
 	<div class="form-container">
 						
-		<div class="form-desc">
+		<!-- <div class="form-desc">
 			<h1 class="top-title">Change Password</h1>
 			<p class="text-blur-md">Enter the OTP sent to the phone number ('.<?php echo $masked_phone_number; ?>.')</p>
 		</div>
 
-		<?php
-
-			if (isset($_POST['reset'])) {
-					echo $output;
-			}
-
-		?>
+		
 		
 
 		<div class="container-body">
@@ -132,7 +126,7 @@ else{
 			
 
 			</form>
-		</div>
+		</div>-->
 	</div>
 
 </body>
