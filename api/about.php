@@ -72,7 +72,7 @@ include 'header.php';
 			<section class="ls section_padding_top_100 section_padding_bottom_100">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-12"> <img src="https://i.ibb.co/fxvr4yp/Whats-App-Image-2024-12-24-at-11-47-43-PM.jpg" alt="" class="alignright">
+						<div class="col-xs-12"> 
 							<h2 class="section_header topmargin_0">Benefits of Being A Member</h2>
 							<p><br>1. Financial Security and Support
 								<br>2. Food & Household Incentives.
