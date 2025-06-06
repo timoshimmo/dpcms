@@ -1,6 +1,4 @@
-<?php
-include 'header.php';
-?>
+
 			<!--<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
 				<div class="container">
 					<div class="row">
@@ -121,5 +119,5 @@ include 'header.php';
 				</div>
 			</section> -->
 <?php
-include 'footer.php';
+//include 'footer.php';
 ?>
