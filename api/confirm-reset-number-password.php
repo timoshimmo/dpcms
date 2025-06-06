@@ -1,7 +1,8 @@
 <?php 
 include("includes/session.php");
-include("includes/config.php"); 
-include("includes/db-functions.php"); 
+//include("includes/config.php"); 
+//include("includes/db-functions.php"); 
+/*
 
 if (isset($_GET['token']) && !empty($_GET['token'])) {
 	$mobile_number = base64_decode($_GET['token']);
@@ -10,11 +11,11 @@ if (isset($_GET['token']) && !empty($_GET['token'])) {
 else{
 	echo "error";
 	exit();
-}
+}*/
 ?>
 
 <?php
-	
+	/*
 
 	if (isset($_POST['reset'])) {
 
@@ -68,7 +69,7 @@ else{
 
 	}
 
-
+*/
 
 ?>
 
