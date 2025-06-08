@@ -71,9 +71,9 @@ if (isset($_POST['btnsubmit_create_account'])){
 
 			?>
 		<div class="card-header">
-									<h5 class="card-title"><center><?php if (isset($_POST['btnsubmit_create_account'])) {
+									<h5 class="card-title" style="text-align: center;"><?php if (isset($_POST['btnsubmit_create_account'])) {
 			echo $output;
-		} ?></center></h5>
+		} ?></h5>
 								</div>
 								<div class="card-body" style="margin-top: -7%;">
 									<h3 style="text-align: center;">Input Number of Bulk Account</h3>
